@@ -12,7 +12,7 @@ function register(program){
     .command('generate-version-file')
     .alias('gvf')
     .description('Generate a dependency version html file')
-    .option('-t, --template <path>', 'Path to HTML template file to hydrate.', './resources/version_template.html')
+    .option('-t, --template <path>', 'Path to HTML template file to hydrate.', path.join(__dirname, 'resources/version_template.html)')
     .option('-o, --output <path>', 'Path where to output the rendered HTML file.', 'version.html')
     .option('-j, --json <path>', 'Path of json data file to merge with template.')
     .option('-f, --force', 'Forcibly overwrite output file if it already exists')
