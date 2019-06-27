@@ -1,0 +1,19 @@
+{
+  "name": "version-gen",
+  "version": "1.0.0",
+  "description": "dependency version generator",
+  "main": "index.js",
+  "bin": {
+    "adtsdk": "./index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^2.20.0",
+    "execa": "^2.0.0",
+    "handlebars": "^4.1.2"
+  }
+}

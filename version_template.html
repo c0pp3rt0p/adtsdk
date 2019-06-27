@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Amway {{product}} {{version}}</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
+    @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+
+    body {
+        font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+
+    h1 {
+        font-size: 30px;
+        color: #002f5f;
+        text-transform: uppercase;
+        font-weight: 600;
+        margin-left: 15px;
+    }
+
+    h3 {
+        color: #56565a;
+        margin-left: 15px;
+    }
+
+    ul {
+        display: block;
+    }
+
+    ul li {
+        list-style: none;
+        justify-content: space-between;
+        display: flex;
+    }
+
+    ul li:hover {
+        background-color: #dadada;
+    }
+
+    ul li span {
+        display: block;
+    }
+
+    .info-wrapper {
+        border-top: 1px solid #dadada;
+        width: 50%;
+    }
+</style>
+
+<body>
+    <h1>Amway {{product}} {{version}}</h1>
+    <h3>Deployment information</h3>
+    <div class="info-wrapper">
+        <ul>
+            {{#if version}}
+            <li>
+                <span>Tag (or branch if HEAD has no tag)</span>
+                <span><strong>{{version}}</strong></span>
+            </li>
+            {{/if}}
+            {{#if timestamp}}
+            <li>
+                <span>Build Timestamp</span>
+                <span><strong>{{timestamp}}</strong></span>
+            </li>
+            {{/if}}
+            {{#if commitHash}}
+            <li>
+                <span>Commit#</span>
+                <span><strong>{{commitHash}}</strong></span>
+            </li>
+            {{/if}}
+            {{#if buildNumber}}
+            <li>
+                <span>Build#</span>
+                <span><strong>{{buildNumber}}</strong></span>
+            </li>
+            {{/if}}
+        </ul>
+    </div>
+    <h3>Dependency Versions</h3>
+    <div class="info-wrapper">
+        <ul>
+            {{#if componentVersions}}
+            {{#each componentVersions}}
+            <li>
+                <span>{{this.name}}</span><span><strong>{{this.version}}</strong></span>
+            </li>
+            {{/each}}
+            {{else}}
+            <li>
+                Version data unavailable
+            </li>
+            {{/if}}
+        </ul>
+    </div>
+</body>
+
+</html>
